@@ -107,7 +107,7 @@ exports.listFile = async (req, res) => {
         key: item.Key,
         size: item.Size,
         LastModified: item.LastModified,
-        url: generatePresignedUrl(item.Key)    };
+        url: generatePresignedUrl(item.Key)};
     });
     res.json(files);
   } catch (err) {

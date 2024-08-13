@@ -1,8 +1,11 @@
 const mongoose = require('mongoose')
-const connectionString = process.env.db_string
+require('dotenv').config();
+const url=require('../configs')
+
+const connectionString = url.s3.db_string
 
 mongoose.connect(connectionString).then(()=>{
-    console.log("mongodb connected to hostelServer");
+    console.log("mongodb connected to File storage server");
 }).catch(err=>{
     console.log("mongodb connection got failed !!" + err);
 })

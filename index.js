@@ -7,6 +7,7 @@ const express = require("express");
 const cors = require("cors");
 const FileServer = express();
 const router = require("./Routes/route");
+const url=require('./configs')
 
 FileServer.use(cors());
 FileServer.use(express.json());
@@ -20,6 +21,7 @@ const port = 5000;
 
 FileServer.listen(port, () => {
   console.log(` FileServer listening at http://localhost:${port}`);
+  
 });
 
 FileServer.get("/", async (req, res) => {
