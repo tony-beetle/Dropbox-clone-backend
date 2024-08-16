@@ -1,5 +1,6 @@
 //import user model
 const users = require("../Models/UserSchema");
+const Folders = require("../Models/FolderSchema")
 var jwt = require("jsonwebtoken");
 const configs = require("../configs");
 var AWS = require("aws-sdk");
@@ -115,3 +116,16 @@ exports.listFile = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
+
+exports.createFolder  = async (req,res) =>{
+console.log("folder creation request received");
+console.log(req.body);
+try{
+
+// res.status(200).send("successfull")
+res.status(200).json(req.body);
+ 
+}catch(err){
+  res.status(500).send(err)
+}
+}

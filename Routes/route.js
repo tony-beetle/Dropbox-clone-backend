@@ -22,6 +22,8 @@ router.post("/upload" ,  verifyToken , upload.single("myFile") , userController.
 
 router.get("/api/files" , verifyToken, userController.listFile)
 
+router.post("/createfolder", userController.createFolder)
+
 
 
 module.exports = router
